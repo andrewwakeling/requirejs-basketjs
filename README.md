@@ -8,6 +8,22 @@ Usage
 ==
 Load `basket.js` and `require.js` libraries before running `basket-loader.js`.
 
+Excluding Modules
+==
+There may some cases where you do not wish to use basket.js to load a module.
+This may be because of a CORS issue or the module you are requesting may not always be consistent upon each request (e.g. Google Maps).
+In these cases, it is possible to exclude them by specifying the module names in the requirejs config. An example:
+
+```` javascript
+{
+    "path": {
+        "gmaps": "https://maps.googleapis.com/maps/api/js?sensor=false"
+    },
+    "basket": {
+        "exclude": ["gmaps"]
+    }
+}
+````
 
 Unsupported Features
 ==
