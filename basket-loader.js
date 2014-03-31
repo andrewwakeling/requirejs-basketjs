@@ -22,11 +22,16 @@
          *
          * Source: https://groups.google.com/forum/#!topic/requirejs/Hf-qNmM0ceI
          */
+
         var config = requirejs.s.contexts._.config;
         if (config.basket && config.basket.excludes && config.basket.excludes.indexOf(moduleName) !== -1) {
             original_loader(context, moduleName, url);
         } else {
-            basket.require({ url: url }).then(function () {
+            var unique = 1;
+            if(config.basket && config.basket.unique && config.basket.unique.hasOwnProperty(moduleName) ){
+                unique = config.basket.unique[moduleName];
+            }
+            basket.require({ url: url,unique:unique }).then(function () {
                 context.completeLoad(moduleName);
             }, function (error) {
                 // TODO: Support path fallback.
