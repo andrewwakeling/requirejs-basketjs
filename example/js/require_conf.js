@@ -6,7 +6,7 @@ require.config({
     basket: {
         excludes: ['general'],
         unique:{
-            util: 1 //change the number after edit util.js file (it will reload and recache it)
+            //util: 1 //change the number after edit util.js file (it will reload and recache it)
         }
     }
 });

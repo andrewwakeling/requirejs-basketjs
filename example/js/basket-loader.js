@@ -27,7 +27,7 @@
         if (config.basket && config.basket.excludes && config.basket.excludes.indexOf(moduleName) !== -1) {
             original_loader(context, moduleName, url);
         } else {
-            var unique = 1;
+            var unique = modules_md5 ? modules_md5[url] : 1;
             if(config.basket && config.basket.unique && config.basket.unique.hasOwnProperty(moduleName) ){
                 unique = config.basket.unique[moduleName];
             }
