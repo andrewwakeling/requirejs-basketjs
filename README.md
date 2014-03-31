@@ -17,10 +17,14 @@ In these cases, it is possible to exclude them by specifying the module names in
 ```` javascript
 {
     "path": {
-        "foo": "https://foo.com/foo.js"
+        "foo": "https://foo.com/foo.js",
+        "bar": "https://foo.com/bar.js"
     },
     "basket": {
-        "exclude": ["foo"]
+        "exclude": ["foo"],
+        "unique": {
+            "bar": 123
+    	}
     }
 }
 ````
