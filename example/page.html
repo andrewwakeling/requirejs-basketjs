@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Sample Project</title>        
+        <script type="text/javascript" src="js/basket.full.min.js"></script>         
+         <script>
+            basket.require({ url: 'js/require.js',unique:1 })
+            .then(function(){
+                //NOTICE: the key is with _ (underscore) beacuse basket.js don't want clear it from localStorage when basket.clear()
+                basket.require({ url: 'js/basket-loader.js', key: 'basket_loader', unique:1 })
+                .then(function(){                    
+                    basket.require({ url: 'js/require_conf.js',unique:1 })
+                })
+            })          
+            // try:
+            // 1) js/modules/util.js ->  uncomment "foo: bar" row
+            // 2) update util.js version in require_conf 
+            // 3) update require_conf version up here (row 12) 
+        </script>
+    </head>
+    <body>
+        <h1>My Sample Project</h1>
+    </body>
+</html>
